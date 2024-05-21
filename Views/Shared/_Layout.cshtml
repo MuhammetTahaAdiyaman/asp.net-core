@@ -1,0 +1,28 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css">
+    @RenderSection("styles",false)
+    <title>Document</title>
+</head>
+<body>
+
+    <header>
+        <!--biz bunu partial view'e aldık ve şimdi _navbar partial view ekleyelim-->
+        @await Html.PartialAsync("_Navbar")
+        @RenderSection("Header",false)
+    </header>
+    <!--header navbar end-->
+    <div class="container mt-3">
+        <main>
+            @RenderBody()
+        </main>
+    </div>
+
+    @RenderSection("Scripts",false)
+    
+    
+</body>
+</html>
